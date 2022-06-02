@@ -23,3 +23,4 @@ cmake ../$repository/llvm \
   -DLLVM_POLLY_LINK_INTO_TOOLS=ON
 
 cmake --build .
+cmake -DCMAKE_INSTALL_PREFIX=/tmp/llvm -P cmake_install.cmake
