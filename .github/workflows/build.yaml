@@ -8,10 +8,11 @@ jobs:
   build:
     strategy:
       matrix:
-        os: 
+        os:
           - ubuntu-latest
           - macos-latest
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
+      - run: brew install llvm
       - run: tools/build.sh
