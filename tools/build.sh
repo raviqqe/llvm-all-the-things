@@ -2,16 +2,22 @@
 
 set -e
 
-version=14.0.4
+tag=llvmorg-14.0.4
+repository=llvm-project
 
-if ! [ -d llvm-project ]; then
-  git clone --depth 1 -b llvmorg-$version https://github.com/llvm/llvm-project
+if ! [ -d $repository ]; then
+  git clone --depth 1 -b $tag https://github.com/llvm/$repository
+else
+  (
+    cd $repository
+    git checkout $tag
+  )
 fi
 
 mkdir -p build
 cd build
 
-cmake -G Ninja ../llvm-project/llvm \
+cmake -G Ninja ../$repository/llvm \
   -DLLVM_ENABLE_PROJECTS='bolt;clang;clang-tools-extra;flang;lld;lldb;mlir;polly' \
   -DLLVM_ENABLE_RUNTIMES='compiler-rt;libc;libcxx;libcxxabi;libunwind' \
   -DLLVM_POLLY_LINK_INTO_TOOLS=ON
