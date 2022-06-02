@@ -12,6 +12,6 @@ mkdir -p build
 cd build
 
 cmake -G Ninja ../llvm-project/llvm \
-  -DLLVM_ENABLE_PROJECTS='clang;clang-tools-extra;lld;lldb;mlir;polly' \
-  -DLLVM_ENABLE_RUNTIMES='compiler-rt;libcxx;libcxxabi;lib;libunwind' \
+  -DLLVM_ENABLE_PROJECTS='bolt;clang;clang-tools-extra;flang;lld;lldb;mlir;polly' \
+  -DLLVM_ENABLE_RUNTIMES='compiler-rt;libc;libcxx;libcxxabi;libunwind' \
   -DLLVM_POLLY_LINK_INTO_TOOLS=ON
