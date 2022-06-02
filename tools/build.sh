@@ -18,8 +18,10 @@ mkdir -p build
 cd build
 
 cmake ../$repository/llvm \
+  -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_C_COMPILER=clang \
   -DCMAKE_CXX_COMPILER=clang++ \
+  -DCMAKE_INSTALL_PREFIX=/tmp/llvm \
   -DLLVM_ENABLE_PROJECTS='bolt;clang;clang-tools-extra;flang;lld;lldb;mlir;polly' \
   -DLLVM_ENABLE_RUNTIMES='compiler-rt;libc;libcxx;libcxxabi;libunwind' \
   -DLLVM_PARALLEL_LINK_JOBS=1 \
@@ -27,5 +29,4 @@ cmake ../$repository/llvm \
   -DLLVM_TARGETS_TO_BUILD=all \
   -DLLVM_USE_LINKER=lld
 
-cmake --build .
-cmake -DCMAKE_INSTALL_PREFIX=/tmp/llvm -P cmake_install.cmake
+cmake --build . --target install
