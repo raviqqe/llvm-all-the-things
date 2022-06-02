@@ -21,7 +21,8 @@ cmake ../$repository/llvm \
   -DLLVM_ENABLE_PROJECTS='bolt;clang;clang-tools-extra;flang;lld;lldb;mlir;polly' \
   -DLLVM_ENABLE_RUNTIMES='compiler-rt;libc;libcxx;libcxxabi;libunwind' \
   -DLLVM_POLLY_LINK_INTO_TOOLS=ON \
-  -DLLVM_TARGETS_TO_BUILD=all
+  -DLLVM_TARGETS_TO_BUILD=all \
+  -DLLVM_USE_LINKER=lld
 
 cmake --build .
 cmake -DCMAKE_INSTALL_PREFIX=/tmp/llvm -P cmake_install.cmake
