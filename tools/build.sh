@@ -28,4 +28,4 @@ cmake ../$repository/llvm \
 
 cmake --build . --target install
 
-tar xf llvm.tar.xz -C $directory .
+tar cf llvm.tar.xz -C $directory .
