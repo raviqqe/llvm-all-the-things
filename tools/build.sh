@@ -18,6 +18,7 @@ mkdir -p build
 cd build
 
 cmake ../$repository/llvm \
+  -G Ninja \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=/tmp/llvm \
   -DLLVM_ENABLE_PROJECTS='mlir;polly' \
