@@ -31,4 +31,4 @@ mkdir -p build
   cmake --build . --target install
 )
 
-tar cf llvm.tar.xz -C $directory .
+tar cf llvm-$(llvm-config --host-target).tar.xz -C $directory .
