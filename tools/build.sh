@@ -21,9 +21,8 @@ cmake ../$repository/llvm \
   -G Ninja \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=/tmp/llvm \
-  -DLLVM_ENABLE_PROJECTS='mlir;polly' \
+  -DLLVM_ENABLE_PROJECTS=mlir \
   -DLLVM_PARALLEL_LINK_JOBS=1 \
-  -DLLVM_POLLY_LINK_INTO_TOOLS=ON \
   -DLLVM_TARGETS_TO_BUILD=all
 
 cmake --build . --target install
