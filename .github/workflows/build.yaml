@@ -14,5 +14,5 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-      - run: brew install llvm
+      - run: brew install ninja
       - run: tools/build.sh
