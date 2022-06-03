@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e
+set -ex
 
 tag=llvmorg-14.0.4
 repository=llvm-project
