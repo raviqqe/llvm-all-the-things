@@ -22,7 +22,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.os }}
-          path: *.tar.*
+          path: "*.tar.*"
           if-no-files-found: error
   tag_check:
     runs-on: ubuntu-latest
