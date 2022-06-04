@@ -31,4 +31,12 @@ mkdir -p build
   cmake --build . --target install
 )
 
-tar cf llvm-$(llvm-config --host-target).tar.xz -C $directory .
+tar cf \
+  llvm-bin-$(clang --print-target-triple).tar.xz \
+  -C $directory \
+  $(ls $directory | grep bin)
+
+tar cf \
+  llvm-lib-$(clang --print-target-triple).tar.xz \
+  -C $directory \
+  $(ls $directory | grep -v bin)
