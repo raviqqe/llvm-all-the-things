@@ -2,7 +2,7 @@
 
 set -ex
 
-tag=llvmorg-14.0.4
+tag=llvmorg-$($(dirname $0)/version.sh)
 repository=llvm-project
 directory=/tmp/llvm
 

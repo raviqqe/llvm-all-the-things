@@ -1,3 +1,5 @@
 #!/bin/sh
 
-echo 0.1.0
+set -e
+
+echo 14.0.4
