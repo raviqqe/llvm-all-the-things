@@ -19,7 +19,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-      - run: brew install ninja
+      - run: brew install doxygen ninja
       - run: tools/build.sh
       - run: echo asset=$(echo *.tar.*) >> $GITHUB_ENV
       - uses: actions/upload-artifact@v2
