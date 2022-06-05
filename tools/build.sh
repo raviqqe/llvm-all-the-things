@@ -24,7 +24,7 @@ mkdir -p build
     -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=$directory \
-    -DLLVM_ENABLE_PROJECTS='lld;lldb;mlir' \
+    -DLLVM_ENABLE_PROJECTS='clang;lld;lldb;mlir' \
     -DLLVM_PARALLEL_LINK_JOBS=1 \
     -DLLVM_TARGETS_TO_BUILD=all
 
