@@ -10,14 +10,17 @@ concurrency:
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
         os:
-          - ubuntu-latest
-          - macos-latest
+          - ubuntu-22.04
+          - ubuntu-20.04
+          - macos-12
+          - macos-11
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
-      - run: brew install ninja
+      - run: brew install doxygen ninja
       - run: tools/build.sh
       - uses: actions/upload-artifact@v3
         with:
